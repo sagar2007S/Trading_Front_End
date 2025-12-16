@@ -1,0 +1,15 @@
+{
+  "signin": "Sign in",
+  "email": "Email",
+  "password": "Password",
+  "remember": "Remember me",
+  "forgot": "Forgot password?",
+  "watchlist":"Watchlist",
+  "news":"News",
+  "calender":"Calander",
+  "forecasts":"Forecasts",
+  "about_us":"About us",
+  "portfolio":"Portfolio",
+  "no_account": "No account?",
+  "registration": "Registration"
+}

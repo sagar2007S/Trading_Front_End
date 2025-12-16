@@ -1,0 +1,15 @@
+{
+  "signin": "Iniciar sesión",
+  "email": "Correo electrónico",
+  "password": "Contraseña",
+  "remember": "Recordarme",
+  "forgot": "¿Olvidaste tu contraseña?",
+  "watchlist": "Lista de seguimiento",
+  "news": "Noticias",
+  "calender": "Calendario",
+  "forecasts": "Pronósticos",
+  "about_us": "Sobre nosotros",
+  "portfolio": "Portafolio",
+   "no_account": "¿No tienes cuenta?",
+  "registration": "Registro"
+}
