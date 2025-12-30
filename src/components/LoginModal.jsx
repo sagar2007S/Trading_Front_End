@@ -1,8 +1,26 @@
 import { X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const LoginModal =({onClose})=>{
   const { t } = useTranslation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigation=useNavigate();
+
+  const handleLogin =(e)=>{
+   e.preventDefault();
+   console.log(`This is Email: -${email}  This is the Password: -${password}`)
+   if(email==="admin@example.com" && password==="123456"){
+    navigation('/user');
+    toast.success("User Logged in Succesfully")
+   }else{
+    console.log("Incoorect Credentials")
+    toast.error("Error Occurred")
+   }
+  } 
     return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
       <div className="bg-white dark:bg-[#181a21] rounded-lg shadow-xl w-full max-w-md mx-4">
@@ -27,7 +45,7 @@ const LoginModal =({onClose})=>{
             {t("signin")}
           </h2>
 
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleLogin}>
             <div>
               <label className="block text-xs mb-1 text-gray-600 dark:text-gray-300">
                {t("email")}
@@ -37,6 +55,7 @@ const LoginModal =({onClose})=>{
                 className="w-full h-10 px-3 rounded border border-gray-300 dark:border-[#303342]
                            bg-white dark:bg-[#181a21] text-sm
                            focus:outline-none focus:ring-1 focus:ring-blue-500"
+                           onChange={(e)=> setEmail(e.target.value)}
               />
             </div>
 
@@ -49,6 +68,7 @@ const LoginModal =({onClose})=>{
                 className="w-full h-10 px-3 rounded border border-gray-300 dark:border-[#303342]
                            bg-white dark:bg-[#181a21] text-sm
                            focus:outline-none focus:ring-1 focus:ring-blue-500"
+                              onChange={(e)=> setPassword(e.target.value)}
               />
             </div>
 
@@ -66,6 +86,7 @@ const LoginModal =({onClose})=>{
               type="submit"
               className="w-full h-10 mt-1 rounded bg-[#3b82f6] hover:bg-[#2563eb]
                          text-white text-sm font-medium"
+                  
             >
               {t("signin")}
             </button>
